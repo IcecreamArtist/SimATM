@@ -1,7 +1,5 @@
 package com.example.simATM;
 
-import sun.security.mscapi.CPublicKey;
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,12 +15,14 @@ public class GUI_simATM {
     输入之后按确定按钮，然后原来的frame窗口就会弹出一个新frame，要求输入数据。
      */
     static Scanner input;  // input from keyboard
-    private static JFrame frame;
+    private JFrame frame;
 
-    public GUI_simATM(){}
+    public GUI_simATM(){
+        initialize();
+    }
 
 
-    private static void createGUI()
+    private void initialize()
     {
         // 初始化窗体
         frame = new JFrame("GUI simATM");
@@ -82,23 +82,16 @@ public class GUI_simATM {
             accounts[i] = new Account(i, 100);
         }
 
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
+        EventQueue.invokeLater(new Runnable() {
             public void run() {
-                createGUI();
+                try {
+                    GUI_simATM window = new GUI_simATM();
+                    window.frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
-
-//        EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                try {
-//                    GUI_simATM window = new GUI_simATM();
-//                    window.frame.setVisible(true);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
 
 /*
         input = new Scanner(System.in);   // get input from keyboard
