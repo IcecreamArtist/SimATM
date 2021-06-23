@@ -6,14 +6,15 @@ import java.awt.*;
 import java.net.URL;
 
 public class MyFrame extends JFrame {
-    MyFrame(String title){
+    MyFrame(String title,String pic){
         super(title);
 
         // 添加图片显示控件
-        BgPanel root = new BgPanel();
+        BgPanel root = new BgPanel(pic);
         this.setContentPane(root);
 
-        root.setLayout(new BoxLayout(root,BoxLayout.Y_AXIS));
+        root.setLayout(null);
+
         root.add(new JLabel("样例文本"));
         root.add(new JButton("测试按钮"));
 
@@ -22,8 +23,8 @@ public class MyFrame extends JFrame {
     private class BgPanel extends JPanel{
         Image image = null;
 
-        public BgPanel(){
-            URL imageUrl = MyFrame.class.getResource("ATM.jpg");
+        public BgPanel(String pic){
+            URL imageUrl = MyFrame.class.getResource(pic);
             try{
                 image= ImageIO.read(imageUrl);
             }catch (Exception e){
