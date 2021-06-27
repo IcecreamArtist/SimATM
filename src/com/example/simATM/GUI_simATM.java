@@ -2,9 +2,8 @@ package com.example.simATM;
 
 import java.awt.*;
 import javax.swing.*;
-import java.net.URL;
 
-public class GUI_simATM{
+public class GUI_simATM {
 
     private MyFrame frame;
     private MyFrame menu;
@@ -13,40 +12,43 @@ public class GUI_simATM{
 
     int ans;
 
-    static Account[] accounts = new Account[10];
+    static Account[] accounts;
 
-    public void getbalance(int id){
+    /**
+     * display the current balance
+     */
+    public void getbalance(int id) {
 
         menu.setVisible(false);
-        MyFrame tmp = new MyFrame("get balance","ATM2.jpg");
+        MyFrame tmp = new MyFrame("get balance", "ATM2.jpg");
         tmp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        tmp.setBounds(350,180,800,600);
+        tmp.setBounds(350, 180, 800, 600);
         tmp.setVisible(true);
 
 
         String msg = "The balance is ";
         JLabel text = new JLabel(msg);
-        text.setBounds(198,170,200,100);
+        text.setBounds(198, 170, 200, 100);
         text.setForeground(Color.WHITE);
-        text.setFont(new Font("Consolas",Font.BOLD,20));
+        text.setFont(new Font("Consolas", Font.BOLD, 20));
         tmp.add(text);
 
         String msg2 = "" + accounts[id].getBalance();
         JLabel text2 = new JLabel(msg2);
-        text2.setBounds(250,200,200,100);
+        text2.setBounds(250, 200, 200, 100);
         text2.setForeground(Color.WHITE);
-        text2.setFont(new Font("Consolas",Font.BOLD,20));
+        text2.setFont(new Font("Consolas", Font.BOLD, 20));
         tmp.add(text2);
 
         JLabel text3 = new JLabel("exit");
-        text3.setBounds(170,230,200,100);
+        text3.setBounds(170, 230, 200, 100);
         text3.setForeground(Color.WHITE);
-        text3.setFont(new Font("Consolas",Font.BOLD,15));
+        text3.setFont(new Font("Consolas", Font.BOLD, 15));
         tmp.add(text3);
 
         JButton button1 = new JButton();
         button1.setText("");
-        button1.setBounds(105,260,40,38);
+        button1.setBounds(105, 260, 40, 38);
         button1.setBackground(Color.LIGHT_GRAY);
         button1.setOpaque(true);
         tmp.add(button1);
@@ -59,27 +61,30 @@ public class GUI_simATM{
 
     }
 
-    public void withdraw(int id){
+    /**
+     * withdraw page
+     */
+    public void withdraw(int id) {
 
         menu.setVisible(false);
-        MyFrame tmp = new MyFrame("withdraw","ATM2.jpg");
+        MyFrame tmp = new MyFrame("withdraw", "ATM2.jpg");
         tmp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        tmp.setBounds(350,180,800,600);
+        tmp.setBounds(350, 180, 800, 600);
         tmp.setVisible(true);
 
 
         String msg = "Enter an amount";
         JLabel text = new JLabel(msg);
-        text.setBounds(188,170,300,100);
+        text.setBounds(188, 170, 300, 100);
         text.setForeground(Color.WHITE);
-        text.setFont(new Font("Consolas",Font.BOLD,25));
+        text.setFont(new Font("Consolas", Font.BOLD, 25));
         tmp.add(text);
 
         String msg2 = "to withdraw";
         JLabel text2 = new JLabel(msg2);
-        text2.setBounds(212,200,200,100);
+        text2.setBounds(212, 200, 200, 100);
         text2.setForeground(Color.WHITE);
-        text2.setFont(new Font("Consolas",Font.BOLD,25));
+        text2.setFont(new Font("Consolas", Font.BOLD, 25));
         tmp.add(text2);
 
         ans = 0;
@@ -92,7 +97,7 @@ public class GUI_simATM{
         button1.setOpaque(true);
         tmp.add(button1);
         button1.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+0;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 0;
         });
 
         JButton button2 = new JButton();
@@ -103,7 +108,7 @@ public class GUI_simATM{
         button2.setOpaque(true);
         tmp.add(button2);
         button2.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+1;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 1;
         });
 
 
@@ -115,7 +120,7 @@ public class GUI_simATM{
         button3.setOpaque(true);
         tmp.add(button3);
         button3.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+2;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 2;
         });
 
 
@@ -127,7 +132,7 @@ public class GUI_simATM{
         button4.setOpaque(true);
         tmp.add(button4);
         button4.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+3;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 3;
         });
 
 
@@ -139,7 +144,7 @@ public class GUI_simATM{
         button5.setOpaque(true);
         tmp.add(button5);
         button5.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+4;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 4;
         });
 
 
@@ -151,7 +156,7 @@ public class GUI_simATM{
         button6.setOpaque(true);
         tmp.add(button6);
         button6.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+5;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 5;
         });
 
 
@@ -163,7 +168,7 @@ public class GUI_simATM{
         button7.setOpaque(true);
         tmp.add(button7);
         button7.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+6;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 6;
         });
 
         JButton button8 = new JButton();
@@ -174,7 +179,7 @@ public class GUI_simATM{
         button8.setOpaque(true);
         tmp.add(button8);
         button8.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+7;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 7;
         });
 
         JButton button9 = new JButton();
@@ -185,7 +190,8 @@ public class GUI_simATM{
         button9.setOpaque(true);
         tmp.add(button9);
         button9.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+8;
+            ans = ans * 10 + 8;
+            // GUI_simATM.this.ans = GUI_simATM.this.ans*10+8;
         });
 
         JButton button10 = new JButton();
@@ -196,7 +202,8 @@ public class GUI_simATM{
         button10.setOpaque(true);
         tmp.add(button10);
         button10.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+9;
+            ans = ans * 10 + 9;
+            // GUI_simATM.this.ans = GUI_simATM.this.ans*10+9;
         });
 
         JButton button11 = new JButton();
@@ -207,7 +214,8 @@ public class GUI_simATM{
         button11.setOpaque(true);
         tmp.add(button11);
         button11.addActionListener(e -> {
-            GUI_simATM.this.ans = 0;
+            ans = 0;
+            //   GUI_simATM.this.ans = 0;
         });
 
         JButton button12 = new JButton();
@@ -224,27 +232,30 @@ public class GUI_simATM{
         });
     }
 
-    public void deposit(int id){
+    /**
+     * deposit page
+     */
+    public void deposit(int id) {
 
         menu.setVisible(false);
-        MyFrame tmp = new MyFrame("withdraw","ATM2.jpg");
+        MyFrame tmp = new MyFrame("withdraw", "ATM2.jpg");
         tmp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        tmp.setBounds(350,180,800,600);
+        tmp.setBounds(350, 180, 800, 600);
         tmp.setVisible(true);
 
 
         String msg = "Enter an amount";
         JLabel text = new JLabel(msg);
-        text.setBounds(188,170,300,100);
+        text.setBounds(188, 170, 300, 100);
         text.setForeground(Color.WHITE);
-        text.setFont(new Font("Consolas",Font.BOLD,25));
+        text.setFont(new Font("Consolas", Font.BOLD, 25));
         tmp.add(text);
 
         String msg2 = "to deposit";
         JLabel text2 = new JLabel(msg2);
-        text2.setBounds(212,200,200,100);
+        text2.setBounds(212, 200, 200, 100);
         text2.setForeground(Color.WHITE);
-        text2.setFont(new Font("Consolas",Font.BOLD,25));
+        text2.setFont(new Font("Consolas", Font.BOLD, 25));
         tmp.add(text2);
 
         ans = 0;
@@ -257,7 +268,7 @@ public class GUI_simATM{
         button1.setOpaque(true);
         tmp.add(button1);
         button1.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+0;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 0;
         });
 
         JButton button2 = new JButton();
@@ -268,7 +279,7 @@ public class GUI_simATM{
         button2.setOpaque(true);
         tmp.add(button2);
         button2.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+1;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 1;
         });
 
 
@@ -280,7 +291,7 @@ public class GUI_simATM{
         button3.setOpaque(true);
         tmp.add(button3);
         button3.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+2;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 2;
         });
 
 
@@ -292,7 +303,7 @@ public class GUI_simATM{
         button4.setOpaque(true);
         tmp.add(button4);
         button4.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+3;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 3;
         });
 
 
@@ -304,7 +315,7 @@ public class GUI_simATM{
         button5.setOpaque(true);
         tmp.add(button5);
         button5.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+4;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 4;
         });
 
 
@@ -316,7 +327,7 @@ public class GUI_simATM{
         button6.setOpaque(true);
         tmp.add(button6);
         button6.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+5;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 5;
         });
 
 
@@ -328,7 +339,7 @@ public class GUI_simATM{
         button7.setOpaque(true);
         tmp.add(button7);
         button7.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+6;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 6;
         });
 
         JButton button8 = new JButton();
@@ -339,7 +350,7 @@ public class GUI_simATM{
         button8.setOpaque(true);
         tmp.add(button8);
         button8.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+7;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 7;
         });
 
         JButton button9 = new JButton();
@@ -350,7 +361,7 @@ public class GUI_simATM{
         button9.setOpaque(true);
         tmp.add(button9);
         button9.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+8;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 8;
         });
 
         JButton button10 = new JButton();
@@ -361,7 +372,7 @@ public class GUI_simATM{
         button10.setOpaque(true);
         tmp.add(button10);
         button10.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+9;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 9;
         });
 
         JButton button11 = new JButton();
@@ -389,27 +400,30 @@ public class GUI_simATM{
         });
     }
 
-    public void transfer2(int id,int idb){
+    /**
+     * transfer money: enter the amount to transfer
+     */
+    public void transfer2(int id, int idb) {
         trans.dispose();
 
-        MyFrame tmp = new MyFrame("transfer","ATM2.jpg");
+        MyFrame tmp = new MyFrame("transfer", "ATM2.jpg");
         tmp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        tmp.setBounds(350,180,800,600);
+        tmp.setBounds(350, 180, 800, 600);
         tmp.setVisible(true);
 
 
         String msg = "Enter an amount";
         JLabel text = new JLabel(msg);
-        text.setBounds(188,170,300,100);
+        text.setBounds(188, 170, 300, 100);
         text.setForeground(Color.WHITE);
-        text.setFont(new Font("Consolas",Font.BOLD,25));
+        text.setFont(new Font("Consolas", Font.BOLD, 25));
         tmp.add(text);
 
         String msg2 = "to transfer";
         JLabel text2 = new JLabel(msg2);
-        text2.setBounds(212,200,200,100);
+        text2.setBounds(212, 200, 200, 100);
         text2.setForeground(Color.WHITE);
-        text2.setFont(new Font("Consolas",Font.BOLD,25));
+        text2.setFont(new Font("Consolas", Font.BOLD, 25));
         tmp.add(text2);
 
         ans = 0;
@@ -422,7 +436,7 @@ public class GUI_simATM{
         button1.setOpaque(true);
         tmp.add(button1);
         button1.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+0;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 0;
         });
 
         JButton button2 = new JButton();
@@ -433,7 +447,7 @@ public class GUI_simATM{
         button2.setOpaque(true);
         tmp.add(button2);
         button2.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+1;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 1;
         });
 
 
@@ -445,7 +459,7 @@ public class GUI_simATM{
         button3.setOpaque(true);
         tmp.add(button3);
         button3.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+2;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 2;
         });
 
 
@@ -457,7 +471,7 @@ public class GUI_simATM{
         button4.setOpaque(true);
         tmp.add(button4);
         button4.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+3;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 3;
         });
 
 
@@ -469,7 +483,7 @@ public class GUI_simATM{
         button5.setOpaque(true);
         tmp.add(button5);
         button5.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+4;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 4;
         });
 
 
@@ -481,7 +495,7 @@ public class GUI_simATM{
         button6.setOpaque(true);
         tmp.add(button6);
         button6.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+5;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 5;
         });
 
 
@@ -493,7 +507,7 @@ public class GUI_simATM{
         button7.setOpaque(true);
         tmp.add(button7);
         button7.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+6;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 6;
         });
 
         JButton button8 = new JButton();
@@ -504,7 +518,7 @@ public class GUI_simATM{
         button8.setOpaque(true);
         tmp.add(button8);
         button8.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+7;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 7;
         });
 
         JButton button9 = new JButton();
@@ -515,7 +529,7 @@ public class GUI_simATM{
         button9.setOpaque(true);
         tmp.add(button9);
         button9.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+8;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 8;
         });
 
         JButton button10 = new JButton();
@@ -526,7 +540,7 @@ public class GUI_simATM{
         button10.setOpaque(true);
         tmp.add(button10);
         button10.addActionListener(e -> {
-            GUI_simATM.this.ans = GUI_simATM.this.ans*10+9;
+            GUI_simATM.this.ans = GUI_simATM.this.ans * 10 + 9;
         });
 
         JButton button11 = new JButton();
@@ -554,27 +568,30 @@ public class GUI_simATM{
         });
     }
 
-    public void transfer(int id){
+    /**
+     * transfer money: enter another id
+     */
+    public void transfer(int id) {
 
         menu.setVisible(false);
-        trans = new MyFrame("transfer","ATM2.jpg");
+        trans = new MyFrame("transfer", "ATM2.jpg");
         trans.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        trans.setBounds(350,180,800,600);
+        trans.setBounds(350, 180, 800, 600);
         trans.setVisible(true);
 
 
         String msg = "Enter an id";
         JLabel text = new JLabel(msg);
-        text.setBounds(188,170,300,100);
+        text.setBounds(188, 170, 300, 100);
         text.setForeground(Color.WHITE);
-        text.setFont(new Font("Consolas",Font.BOLD,25));
+        text.setFont(new Font("Consolas", Font.BOLD, 25));
         trans.add(text);
 
         String msg2 = "to transfer";
         JLabel text2 = new JLabel(msg2);
-        text2.setBounds(212,200,200,100);
+        text2.setBounds(212, 200, 200, 100);
         text2.setForeground(Color.WHITE);
-        text2.setFont(new Font("Consolas",Font.BOLD,25));
+        text2.setFont(new Font("Consolas", Font.BOLD, 25));
         trans.add(text2);
 
 
@@ -586,7 +603,7 @@ public class GUI_simATM{
         button1.setOpaque(true);
         trans.add(button1);
         button1.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,0);
+            GUI_simATM.this.transfer2(id, 0);
         });
 
         JButton button2 = new JButton();
@@ -597,7 +614,7 @@ public class GUI_simATM{
         button2.setOpaque(true);
         trans.add(button2);
         button2.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,1);
+            GUI_simATM.this.transfer2(id, 1);
         });
 
 
@@ -609,7 +626,7 @@ public class GUI_simATM{
         button3.setOpaque(true);
         trans.add(button3);
         button3.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,2);
+            GUI_simATM.this.transfer2(id, 2);
         });
 
 
@@ -621,7 +638,7 @@ public class GUI_simATM{
         button4.setOpaque(true);
         trans.add(button4);
         button4.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,3);
+            GUI_simATM.this.transfer2(id, 3);
         });
 
 
@@ -633,7 +650,7 @@ public class GUI_simATM{
         button5.setOpaque(true);
         trans.add(button5);
         button5.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,4);
+            GUI_simATM.this.transfer2(id, 4);
         });
 
 
@@ -645,7 +662,7 @@ public class GUI_simATM{
         button6.setOpaque(true);
         trans.add(button6);
         button6.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,5);
+            GUI_simATM.this.transfer2(id, 5);
         });
 
 
@@ -657,7 +674,7 @@ public class GUI_simATM{
         button7.setOpaque(true);
         trans.add(button7);
         button7.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,6);
+            GUI_simATM.this.transfer2(id, 6);
         });
 
         JButton button8 = new JButton();
@@ -668,7 +685,7 @@ public class GUI_simATM{
         button8.setOpaque(true);
         trans.add(button8);
         button8.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,7);
+            GUI_simATM.this.transfer2(id, 7);
         });
 
         JButton button9 = new JButton();
@@ -679,7 +696,7 @@ public class GUI_simATM{
         button9.setOpaque(true);
         trans.add(button9);
         button9.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,8);
+            GUI_simATM.this.transfer2(id, 8);
         });
 
         JButton button10 = new JButton();
@@ -690,42 +707,45 @@ public class GUI_simATM{
         button10.setOpaque(true);
         trans.add(button10);
         button10.addActionListener(e -> {
-            GUI_simATM.this.transfer2(id,9);
+            GUI_simATM.this.transfer2(id, 9);
         });
     }
 
-    public void MenuPage(int id){
+    /**
+     * show the menu page
+     */
+    public void MenuPage(int id) {
         frame.setVisible(false);
-        menu = new MyFrame("simulated ATM","ATM2.jpg");
+        menu = new MyFrame("simulated ATM", "ATM2.jpg");
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        menu.setBounds(350,180,800,600);
+        menu.setBounds(350, 180, 800, 600);
         menu.setVisible(true);
 
-        // 然后菜单显示
+        // display the menu
         JLabel text = new JLabel("Main menu");
         JLabel text1 = new JLabel("check balance");//1
         JLabel text2 = new JLabel("withdraw");//2
         JLabel text3 = new JLabel("deposit");//3
         JLabel text4 = new JLabel("transfer");//4
         JLabel text5 = new JLabel("exit");//5
-        text.setBounds(188,90,200,100);
+        text.setBounds(188, 90, 200, 100);
         text.setForeground(Color.WHITE);
-        text.setFont(new Font("Consolas",Font.BOLD,40));
-        text1.setBounds(163,135,200,100);
+        text.setFont(new Font("Consolas", Font.BOLD, 40));
+        text1.setBounds(163, 135, 200, 100);
         text1.setForeground(Color.WHITE);
-        text1.setFont(new Font("Consolas",Font.BOLD,15));
-        text2.setBounds(350,135,200,100);
+        text1.setFont(new Font("Consolas", Font.BOLD, 15));
+        text2.setBounds(350, 135, 200, 100);
         text2.setForeground(Color.WHITE);
-        text2.setFont(new Font("Consolas",Font.BOLD,15));
-        text3.setBounds(163,180,200,100);
+        text2.setFont(new Font("Consolas", Font.BOLD, 15));
+        text3.setBounds(163, 180, 200, 100);
         text3.setForeground(Color.WHITE);
-        text3.setFont(new Font("Consolas",Font.BOLD,15));
-        text4.setBounds(350,180,200,100);
+        text3.setFont(new Font("Consolas", Font.BOLD, 15));
+        text4.setBounds(350, 180, 200, 100);
         text4.setForeground(Color.WHITE);
-        text4.setFont(new Font("Consolas",Font.BOLD,15));
-        text5.setBounds(170,230,200,100);
+        text4.setFont(new Font("Consolas", Font.BOLD, 15));
+        text5.setBounds(170, 230, 200, 100);
         text5.setForeground(Color.WHITE);
-        text5.setFont(new Font("Consolas",Font.BOLD,15));
+        text5.setFont(new Font("Consolas", Font.BOLD, 15));
         menu.add(text);
         menu.add(text1);
         menu.add(text2);
@@ -733,10 +753,10 @@ public class GUI_simATM{
         menu.add(text4);
         menu.add(text5);
 
-        // 按钮
+        // button
         JButton button1 = new JButton();
         button1.setText("");
-        button1.setBounds(105,165,40,38);
+        button1.setBounds(105, 165, 40, 38);
         button1.setBackground(Color.LIGHT_GRAY);
         button1.setOpaque(true);
         menu.add(button1);
@@ -747,7 +767,7 @@ public class GUI_simATM{
 
         JButton button2 = new JButton();
         button2.setText("");
-        button2.setBounds(430,165,40,38);
+        button2.setBounds(430, 165, 40, 38);
         button2.setBackground(Color.LIGHT_GRAY);
         button2.setOpaque(true);
         menu.add(button2);
@@ -758,7 +778,7 @@ public class GUI_simATM{
 
         JButton button3 = new JButton();
         button3.setText("");
-        button3.setBounds(105,210,40,38);
+        button3.setBounds(105, 210, 40, 38);
         button3.setBackground(Color.LIGHT_GRAY);
         button3.setOpaque(true);
         menu.add(button3);
@@ -769,7 +789,7 @@ public class GUI_simATM{
 
         JButton button4 = new JButton();
         button4.setText("");
-        button4.setBounds(430,210,40,38);
+        button4.setBounds(430, 210, 40, 38);
         button4.setBackground(Color.LIGHT_GRAY);
         button4.setOpaque(true);
         menu.add(button4);
@@ -780,7 +800,7 @@ public class GUI_simATM{
 
         JButton button5 = new JButton();
         button5.setText("");
-        button5.setBounds(105,260,40,38);
+        button5.setBounds(105, 260, 40, 38);
         button5.setBackground(Color.LIGHT_GRAY);
         button5.setOpaque(true);
         menu.add(button5);
@@ -791,15 +811,18 @@ public class GUI_simATM{
 
     }
 
-    public void initialize(){
+    /**
+     * display the row of ATMs picture
+     */
+    public void initialize() {
         start = new MyFrame("simulated ATM", "Row-of-ATMs.jpg");
         start.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         start.setBounds(100, 100, 1200, 757);
         start.setVisible(true);
 
         JButton button = new JButton("START");
-        button.setBounds(500,350,200,100);
-        button.setFont(new Font("Consolas",Font.BOLD,30));
+        button.setBounds(500, 350, 200, 100);
+        button.setFont(new Font("Consolas", Font.BOLD, 30));
         button.setBackground(Color.pink);
         button.setOpaque(true);
         start.add(button);
@@ -809,13 +832,16 @@ public class GUI_simATM{
         });
     }
 
+    /**
+     * constructor
+     */
     public GUI_simATM() {
         frame = new MyFrame("simulated ATM", "ATM2.jpg");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(350, 180, 800, 600);
         frame.setVisible(false);
         initialize();
-        // 先登录
+        // log in first
 
         JLabel loginmsg = new JLabel("Enter an id");
         loginmsg.setBounds(220, 150, 200, 100);
@@ -891,7 +917,7 @@ public class GUI_simATM{
         button6.setOpaque(true);
         frame.add(button6);
         button6.addActionListener(e -> {
-            GUI_simATM.this.MenuPage(5);
+            MenuPage(5);
         });
 
 
@@ -903,7 +929,7 @@ public class GUI_simATM{
         button7.setOpaque(true);
         frame.add(button7);
         button7.addActionListener(e -> {
-            GUI_simATM.this.MenuPage(6);
+            MenuPage(6);
         });
 
         JButton button8 = new JButton();
@@ -914,7 +940,7 @@ public class GUI_simATM{
         button8.setOpaque(true);
         frame.add(button8);
         button8.addActionListener(e -> {
-            GUI_simATM.this.MenuPage(7);
+            MenuPage(7);
         });
 
         JButton button9 = new JButton();
@@ -940,7 +966,11 @@ public class GUI_simATM{
         });
     }
 
+    /**
+     * initialize the account array and running
+     */
     public static void main(String[] args) {
+        accounts = new Account[10];
         for (int i = 0; i < 10; ++i) {
             // create new account object
             accounts[i] = new Account(i, 100);
@@ -948,6 +978,7 @@ public class GUI_simATM{
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+                // invoke constructor
                 GUI_simATM window = new GUI_simATM();
             }
         });

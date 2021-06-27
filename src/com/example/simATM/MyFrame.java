@@ -6,20 +6,21 @@ import java.awt.*;
 import java.net.URL;
 
 public class MyFrame extends JFrame {
+
+    /** constuctor */
     MyFrame(String title,String pic){
         super(title);
 
-        // 添加图片显示控件
+        /** add picture display component */
         BgPanel root = new BgPanel(pic);
         this.setContentPane(root);
 
+        /** no layout(DIY) */
         root.setLayout(null);
-
-        root.add(new JLabel("样例文本"));
-        root.add(new JButton("测试按钮"));
 
     }
 
+    /** background panel */
     private class BgPanel extends JPanel{
         Image image = null;
 
